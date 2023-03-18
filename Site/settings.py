@@ -32,6 +32,7 @@ DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'User.User'
 
 # Application definition
 
