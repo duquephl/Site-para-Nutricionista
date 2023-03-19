@@ -61,11 +61,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Site.urls'
 
+# django_project/settings.py
+LOGIN_REDIRECT_URL = "/"
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'Main/templates')
+                 os.path.join(BASE_DIR, 'Main/templates'),
+                 os.path.join(BASE_DIR, 'User/templates'),
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
