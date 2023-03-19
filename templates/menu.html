@@ -1,18 +1,29 @@
 <header>
-    <h1>Nutrição</h1>
+
     <nav>
       <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Serviços</a></li>
-
-        <li><a href="{% url 'contato' %}">Contato</a></li>
-
+      <div align="left"><h1>Nutrição</h1></div>
+      <div align="right">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <a href="/">Home</a></li>
+        </button>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <a href="{% url 'sobre' %}">Sobre</a></li>
+        </button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <a href="#">Serviços</a></li>
+        </button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <a href="{% url 'contato' %}">Contato</a></li>
+        </button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Sair</a></li>
+            <a href="{% url 'logout' %}">Sair</a></li>
         {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
+            <a href="{% url 'login' %}">Login</a></li>
         {% endif %}
-      </ul>
+        </button>
+        </div>
+        </ul>
     </nav>
   </header>

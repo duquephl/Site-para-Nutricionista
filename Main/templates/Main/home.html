@@ -1,19 +1,15 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Nutrição</title>
-  {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% include 'base.html' %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Home</title>
 </head>
 <body>
   {% include 'menu.html' %}
   <main>
     
   </main>
-  <footer>
-    <p>Copyright &copy; 
-    <?php echo date("Y"); ?> Nutrição</p>
-  </footer>
+    {% include 'footer.html' %}
 </body>
 </html>
