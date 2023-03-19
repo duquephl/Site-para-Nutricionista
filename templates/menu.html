@@ -6,35 +6,19 @@
           <div align="left"><h1>Nutrição</h1></div>
       </menu>
       <menu>
-      <div align="right">
-            <button type="button" class="button" onclick=location.href='/'>
+      <div align="right" >
+            <button type="button" class="button " onclick=location.href='/'>
                 <a >Home</a>
           </button>
-              </div>
-      </menu>
-      <menu>
-        <div align="right">
             <button type="button" class="button" onclick=location.href="{% url 'sobre' %}">
                 <a href="{% url 'sobre' %}">Sobre</a>
             </button>
-        </div>
-        </menu>
-        <menu>
-        <div align="right">
             <button type="button" class="button" onclick=location.href="#">
                 <a href="#">Serviços</a>
             </button>
-        </div>
-        </menu>
-        <menu>
-        <div align="right">
         <button type="button" class="button" onclick=location.href="{% url 'contato' %}">
         <a href="{% url 'contato' %}">Contato</a>
         </button>
-        </div>
-        </menu>
-        <menu>
-        <div align="right">
         <button type="button" class="button" onclick=
         {% if user.is_authenticated %}
             location.href="{% url 'logout' %}"

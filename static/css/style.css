@@ -45,5 +45,5 @@ body {
     color: #fff;
   }
   menu{
-    display: inline-table;
+display: inline-block;
   }
