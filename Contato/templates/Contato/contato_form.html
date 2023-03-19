@@ -1,27 +1,30 @@
 <html>
+
 <head>
-    {% include 'base.html' %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Contato</title>
+  {% include 'base.html' %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Contato</title>
 </head>
+
 <body>
   {% include 'menu.html' %}
   <div class="container" align='center'>
     <div>
-        <h1 align = 'center'>Enviar Mensagem</h1>
+      <h1 align='center'>Enviar Mensagem</h1>
     </div>
     <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p}}
-        <button onclick="myFunction()" type="submit">Enviar</button>
+      {% csrf_token %}
+      {{ form.as_p}}
+      <button onclick="myFunction()" type="submit">Enviar</button>
     </form>
-</div>
-<script>
+  </div>
+  <script>
     function myFunction() {
       alert("Mensagem enviada com sucesso!");
     }
   </script>
-{% include 'footer.html' %}
+  {% include 'footer.html' %}
 </body>
+
 </html>
