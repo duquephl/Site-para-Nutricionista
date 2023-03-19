@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
@@ -14,5 +14,6 @@ class CustomLoginView(LoginView):
         login(self.request, form.get_user())
         return super().form_valid(form)
 
-class CustomLogoutView(LoginView):
-    template_name = 'User/logout.html'
+
+class CustomLogoutView(LogoutView):
+    next_page = reverse_lazy('home')

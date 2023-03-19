@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from Contato.views import ContatoView
+from Contato.views import CreateContatoView
 
 urlpatterns = [
-    path('', ContatoView.as_view(), name='contato'),
+    path('', CreateContatoView.as_view(), name='contato'),
 ]

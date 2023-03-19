@@ -7,17 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  <header>
-    <h1>Nutrição</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  {% include 'menu.html' %}
   <main>
     <h2>Agende uma consulta</h2>
     <formmethod="post" action="{% url 'enviar_mensagem' %}">
