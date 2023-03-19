@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from Main.views import HomeView
+from Contato.views import ContatoView
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
+    path('', ContatoView.as_view(), name='contato'),
 ]
