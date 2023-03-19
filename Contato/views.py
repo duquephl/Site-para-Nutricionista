@@ -11,4 +11,4 @@ from Contato.models import Contato
 class CreateContatoView(CreateView):
     model = Contato
     form_class = ContatoForm
-    success_url = '/contato/'
+    success_url = '/'

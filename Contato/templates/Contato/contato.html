@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nutrição</title>
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <ul><li><a href="{% url 'home' %}">Início</a></li></ul>
+  </header>
+  <main>
+    <h2>Agende uma consulta</h2>
+    <form method="post" action="{% url 'enviar_mensagem' %}">
+        {% csrf_token %}
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="assunto">Assunto:</label>
+      <input type="text" id="assunto" name="assunto" required>
+
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" action="myFunction()">Enviar</button>
+    </form>
+  </main>
+  <footer>
+    <p>Copyright &copy; 
+    <?php echo date("Y"); ?> Nutrição</p>
+  </footer>
+
+  <script>
+    function myFunction() {
+      alert("Mensagem enviada com sucesso!");
+    }
+  </script>
+
+</body>
+</html>
