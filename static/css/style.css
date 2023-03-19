@@ -30,7 +30,20 @@ body {
     background-color: #008080;
     color: #fff;
     padding: 10px;
-    border: none;
+    border: 0;
     border-radius: 5px;
     cursor: pointer;
+  }
+    button:hover {
+        background-color: #006060;
+    }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #fff;
+  }
+  menu{
+    display: inline-table;
   }

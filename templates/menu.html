@@ -2,28 +2,48 @@
 
     <nav>
       <ul>
-      <div align="left"><h1>Nutrição</h1></div>
+      <menu>
+          <div align="left"><h1>Nutrição</h1></div>
+      </menu>
+      <menu>
       <div align="right">
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <a href="/">Home</a></li>
+            <button type="button" class="button" href="/">
+                <a >Home</a>
+          </button>
+              </div>
+      </menu>
+      <menu>
+        <div align="right">
+            <button type="button" class="button">
+                <a href="{% url 'sobre' %}">Sobre</a>
+            </button>
+        </div>
+        </menu>
+        <menu>
+        <div align="right">
+            <button type="button" class="button">
+                <a href="#">Serviços</a>
+            </button>
+        </div>
+        </menu>
+        <menu>
+        <div align="right">
+        <button type="button" class="button">
+        <a href="{% url 'contato' %}">Contato</a>
         </button>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <a href="{% url 'sobre' %}">Sobre</a></li>
-        </button>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <a href="#">Serviços</a></li>
-        </button>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <a href="{% url 'contato' %}">Contato</a></li>
-        </button>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        </div>
+        </menu>
+        <menu>
+        <div align="right">
+        <button type="button" class="button">
         {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">Sair</a></li>
+            <a href="{% url 'logout' %}">Sair</a>
         {% else %}
-            <a href="{% url 'login' %}">Login</a></li>
+            <a href="{% url 'login' %}">Login</a>
         {% endif %}
         </button>
         </div>
+        </menu>
         </ul>
     </nav>
   </header>
