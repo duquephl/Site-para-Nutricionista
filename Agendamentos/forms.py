@@ -6,13 +6,12 @@ class AgendamentoForm(forms.ModelForm):
         model = Agendamento
         fields = ['nome', 'data', 'horario']
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['nome'].queryset = Agendamento.objects.all()
-
     def save(self, commit=True):
         agendamento = super(AgendamentoForm, self).save(commit=False)
-        agendamento.status = 'Agendado'
-        if commit:
+        agendamento.status = 'A'
+        agendamento.Data_Hora = str(agendamento.data) + ' ' + agendamento.horario
+        if Agendamento.objects.filter(Data_Hora=agendamento.Data_Hora).exists():
+            raise forms.ValidationError('Horário indisponível')
+        elif commit:
             agendamento.save()
         return agendamento

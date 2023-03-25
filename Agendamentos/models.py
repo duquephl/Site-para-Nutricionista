@@ -27,6 +27,10 @@ class Agendamento(models.Model):
     data = models.DateField()
     horario = models.CharField(max_length=5, choices=Choices_horario)
     status = models.CharField(max_length=1, choices=Choices_status)
+    Data_Hora = models.CharField(max_length=50, default='')
 
     def __str__(self):
+        return self.nome.nome
+
+    def __display__(self):
         return User.objects.filter(id=self.nome_id).first().nome
