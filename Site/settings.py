@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Main',
     'User',
     'Contato',
+    'Agendamentos',
 ]
 
 MIDDLEWARE = [
