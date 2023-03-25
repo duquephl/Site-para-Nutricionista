@@ -24,6 +24,12 @@
             {% else %} location.href="{% url 'login' %}" {% endif %}>
             {% if user.is_authenticated %} Logout {% else %} Login {% endif %}
           </button>
+          {% if user.is_authenticated %} 
+          <button type="button" class="button" onclick=location.href="{% url 'agendamento' %}">
+              Agendamento
+            </a>
+          </button>
+          {% endif %}
         </div>
       </menu>
     </ul>

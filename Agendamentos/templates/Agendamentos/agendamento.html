@@ -1,0 +1,26 @@
+<html>
+    <head>
+        {% include 'base.html' %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>Agendamento</title>
+    </head>
+    <body>
+        {% include 'menu.html' %}
+        <div class="container" align='center'>
+            <div>
+                <h1 align='center'>Agendar Consulta</h1>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <button onclick="myFunction()" type="submit">Agendar</button>
+            </form>
+        </div>
+        <script>
+            function myFunction() {
+                alert("Consulta agendada com sucesso!");
+            }
+        </script>
+        {% include 'footer.html' %}
+</html>
