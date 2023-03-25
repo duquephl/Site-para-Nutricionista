@@ -20,17 +20,18 @@ Choices_status = (
     ('A', 'Agendado'),
     ('C', 'Cancelado'),
     ('F', 'Finalizado'),
+    ('Livre', 'Livre'),
 )
 
 class Agendamento(models.Model):
     nome = models.ForeignKey('User.User', on_delete=models.CASCADE)
     data = models.DateField()
     horario = models.CharField(max_length=5, choices=Choices_horario)
-    status = models.CharField(max_length=1, choices=Choices_status)
+    status = models.CharField(max_length=5, choices=Choices_status, default='Livre')
     Data_Hora = models.CharField(max_length=50, default='')
 
     def __str__(self):
-        return self.nome.nome
+        return self.nome.nome + ' - ' + str(self.data) + ' - ' + self.horario
 
     def __display__(self):
         return User.objects.filter(id=self.nome_id).first().nome
