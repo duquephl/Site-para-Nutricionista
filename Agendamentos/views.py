@@ -5,11 +5,11 @@ from django.shortcuts import render
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 
+from Agendamentos.forms import AgendamentoForm
 from Agendamentos.models import Agendamento
 
 class CreateAgendamentoView(CreateView):
     model = Agendamento
-    template_name = 'agendamento.html'
-    fields = ['nome', 'data', 'horario']
+    form_class = AgendamentoForm
     success_url = reverse_lazy('agendamento')
 
